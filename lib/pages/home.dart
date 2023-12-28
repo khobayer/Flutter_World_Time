@@ -17,8 +17,8 @@ class _HomeState extends State<Home> {
     print(data);
 
     //set backgrround
-    String bgImage = (data['isDayTime'] ?? false) ? 'day.png' : 'night.png';
-    Color bgColor = (data['isDayTime'] ?? false) ? Colors.blue : const Color.fromARGB(255, 48, 63, 159);
+    String bgImage = data['isDayTime'] ? 'day.png' : 'night.png';
+    Color bgColor = data['isDayTime'] ? Colors.blue : const Color.fromARGB(255, 48, 63, 159);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
                         data = {
                           'time': result['time'],
                           'location': result['location'],
-                          'isDayTime': result['isDaytime'],
+                          'isDayTime': result['isDayTime'],
                           'flag': result['flag'],
                         };
                       });
